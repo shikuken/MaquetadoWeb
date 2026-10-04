@@ -1,0 +1,483 @@
+/* ===================================================
+   1. RESET Y REGLAS GLOBALES
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Títulos de sección centrados */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+    color: #0f172a;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #2563eb;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+section {
+    padding: 70px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* ===================================================
+   2. HEADER / NAVEGACIÓN
+   =================================================== */
+header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+}
+
+/* Logo */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;                
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #1e293b;
+    line-height: 1;  
+}
+
+.logo-symbol img{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+}
+
+.span{
+    display: inline-flex;
+    align-items: end;
+}
+
+/* Menú de navegación */
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links li a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.8px;
+    color: #475569;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+.nav-links li a:hover {
+    color: #2563eb;
+    background-color: #eff6ff;
+}
+
+/* ===================================================
+   3. HERO / DIV CON FONDO Y PÁRRAFO
+   =================================================== */
+.hero {
+    background-image: url(img/fondo.jpg);
+    color: #ffffff;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 2.7rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+    color: #60a5fa;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    margin-bottom: 28px;
+    max-width: 530px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 13px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    transition: all 0.25s ease;
+}
+
+.hero-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-visual svg {
+    width: 100%;
+    max-width: 360px;
+}
+
+.hero-visual img{
+    border-radius: 100px;
+}
+
+/* ===================================================
+   4. SECCIÓN NOSOTROS
+   =================================================== */
+.nosotros {
+    background-color: #ffffff;
+}
+
+.nosotros-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.nosotros-description h3 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 16px;
+}
+
+.nosotros-description p {
+    font-size: 1.05rem;
+    color: #64748b;
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+.nosotros-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.nosotros-visual svg {
+    max-width: 300px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+/* ===================================================
+   5. SECCIÓN SERVICIOS (3 TARJETAS)
+   =================================================== */
+.servicios {
+    background-color: #f8fafc;
+}
+
+.servicios-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 35px 25px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.1);
+    border-color: #bfdbfe;
+}
+
+.card-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* ===================================================
+   6. SECCIÓN PRODUCTOS (5 CÍRCULOS)
+   =================================================== */
+.productos {
+    background-color: #ffffff;
+}
+
+.productos-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.producto-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+
+.producto-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #475569;
+    transition: color 0.3s ease;
+}
+
+
+/* ===================================================
+   7. FOOTER (3 COLUMNAS)
+   =================================================== */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding-top: 60px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #2563eb;
+    border-radius: 2px;
+}
+
+/* Columna 1: Datos de la empresa */
+.empresa-info li {
+    margin-bottom: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+
+/* Columna 2: Enlaces de interés */
+.enlaces-list li {
+    margin-bottom: 12px;
+}
+
+.enlaces-list a {
+    transition: color 0.25s ease, transform 0.25s ease;
+    display: inline-block;
+    font-size: 0.95rem;
+}
+
+.enlaces-list a:hover {
+    color: #60a5fa;
+    transform: translateX(6px);
+}
+
+/* Columna 3: Formulario */
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-form input,
+.footer-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    color: #f8fafc;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.25s ease;
+}
+
+.footer-form input:focus,
+.footer-form textarea:focus {
+    border-color: #3b82f6;
+}
+
+.footer-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.footer-form button {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-form button:hover {
+    background-color: #1d4ed8;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* ===================================================
+   8. RESPONSIVE DESIGN (MÓVILES Y TABLETS)
+   =================================================== */
+@media (max-width: 900px) {
+
+    .hero-layout,
+    .nosotros-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .nosotros-description p {
+        text-align: center;
+    }
+
+    .servicios-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .servicios-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+}
